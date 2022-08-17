@@ -30,7 +30,7 @@
     JOIN
         pedidos ON clientes.id = pedidos.id
     JOIN 
-        produtos_pedidos ON pedidos.id = produtos_pedidos.produtos_id
+        produtos_pedidos ON pedidos.id = produtos_pedidos.produto_id
     WHERE
         clientes.nome = 'Georgia';
 
