@@ -7,7 +7,7 @@
         id BIGSERIAL PRIMARY KEY,
         nome VARCHAR(50) NOT NULL,
         lealdade INTEGER NOT NULL
-    )  
+    ); 
 
 -- Tabela endereços
     CREATE TABLE IF NOT EXISTS enderecos(
@@ -19,7 +19,7 @@
         complemento VARCHAR(100),
         cliente_id INTEGER UNIQUE NOT NULL,
         FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
-    )
+    );
 
 -- Tabela pedidos
     CREATE TABLE IF NOT EXISTS pedidos(
@@ -27,7 +27,7 @@
         status VARCHAR(50) NOT NULL,
         cliente_id INTEGER NOT NULL,
         FOREIGN KEY (cliente_id) REFERENCES clientes(id) ON DELETE CASCADE
-    )
+    );
 
 -- Tabela produtos
     CREATE TABLE IF NOT EXISTS produtos(
@@ -36,7 +36,7 @@
         tipo VARCHAR(30) NOT NULL,
         preco FLOAT(8) NOT NULL,
         pts_de_lealdade INTEGER NOT NULL
-    )
+    );
 
 -- Tabela produtos_pedidos
     CREATE TABLE IF NOT EXISTS produtos_pedidos(
@@ -45,4 +45,4 @@
         produto_id INTEGER NOT NULL,
         FOREIGN KEY (pedido_id) REFERENCES pedidos(id) ON DELETE CASCADE,
         FOREIGN KEY (produto_id) REFERENCES produtos(id) ON DELETE CASCADE
-    )
+    );

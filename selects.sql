@@ -6,14 +6,16 @@ SELECT
 	*
 FROM
 	pedidos pe
-FULL JOIN 
+JOIN 
 	produtos pr ON pe.id = pr.id;
 
 -- 2)
 SELECT 
-	id
+	*
 FROM 
-	produtos
+	pedidos pe
+JOIN
+	produtos pr ON pe.id = pr.id;
 WHERE
 	produtos.nome = 'Fritas';
 

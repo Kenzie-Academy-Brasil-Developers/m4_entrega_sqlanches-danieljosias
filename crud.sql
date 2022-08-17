@@ -7,7 +7,7 @@
     INSERT INTO clientes(nome,lealdade) VALUES('Georgia',0);
 
 -- 2)
-    INSERT INTO pedidos(status,cliente_id) VALUES('Recebido');
+    INSERT INTO pedidos(status,cliente_id) VALUES('Recebido',6);
 
 -- 3)
     INSERT INTO 
@@ -30,7 +30,7 @@
     JOIN
         pedidos ON clientes.id = pedidos.id
     JOIN 
-        produtos ON pedidos.id = produtos.id
+        produtos_pedidos ON pedidos.id = produtos_pedidos.produtos_id
     WHERE
         clientes.nome = 'Georgia';
 
@@ -54,5 +54,4 @@
     WHERE	
 	    id = 4
         RETURNING *;
-
 
