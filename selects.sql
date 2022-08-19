@@ -5,19 +5,21 @@
 SELECT
 	*
 FROM
-	pedidos pe
-JOIN 
-	produtos pr ON pe.id = pr.id;
+	pedidos
+JOIN
+	produtos ON pedidos.id = produtos.id;
 
 -- 2)
-SELECT 
-	*
-FROM 
-	pedidos pe
-JOIN
-	produtos pr ON pe.id = pr.id;
-WHERE
-	produtos.nome = 'Fritas';
+  SELECT 
+      pedidos.id
+  FROM 
+      produtos
+  JOIN
+      produtos_pedidos ON produtos.id = produtos_pedidos.produto_id
+  JOIN 
+      pedidos ON produtos_pedidos.pedido_id = pedidos.id
+  WHERE
+      produtos.nome = 'Fritas';
 
 -- 3)
 SELECT 
