@@ -7,8 +7,10 @@ SELECT
 FROM
 	pedidos
 JOIN
-	produtos ON pedidos.id = produtos.id;
-
+	produtos_pedidos ON pedidos.id = produtos_pedidos.pedido_id
+JOIN
+	produtos ON produtos.id = produtos_pedidos.produto_id;
+	
 -- 2)
   SELECT 
       pedidos.id
